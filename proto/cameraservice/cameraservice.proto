@@ -42,23 +42,23 @@ service ServiceController{
 enum DataFormat  {PNG = 0; JPG = 1; RAW = 2; BMP = 3;}
 
 message TakePictureWithSettingsRequest{
-    Settings settings = 1;
-    PictureConfig picture_config = 2;
+    repeated Settings settings = 1;
+    repeated PictureConfig picture_config = 2;
 }
 
-enum Settings{
+message Settings{
     float gain_in_dezibel = 1;
     float exposure_time_in_microseconds = 2;
 }
 
-enum SettingsRange{
+message SettingsRange{
     float gain_lower_limit_in_dezibel = 1;
     float gain_upper_limit_in_dezibel = 2;
     float exposure_time_lower_limit_in_microseconds = 3;
     float exposure_time_upper_limit_in_microseconds = 4;
 }
 
-enum PictureConfig{
+message PictureConfig{
     // format of the returned data
     DataFormat data_format = 1;
 }
