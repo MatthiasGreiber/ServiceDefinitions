@@ -42,8 +42,8 @@ service ServiceController{
 enum DataFormat  {PNG = 0; JPG = 1; RAW = 2; BMP = 3;}
 
 message TakePictureWithSettingsRequest{
-    Settings settings = 1;
-    PictureConfig picture_config = 2;
+    repeated Settings settings = 1;
+    repeated PictureConfig picture_config = 2;
 }
 
 message Settings{
